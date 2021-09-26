@@ -1,6 +1,4 @@
-# build-a-beautiful-easily-extensible-website-in-about-5-mins
-
-# AKA... Ubuntu 20.04 to Awesome Website in ~5 mins 
+# Ubuntu 20.04 to Awesome Website in ~5 mins 
 
 ## WHAT
 
