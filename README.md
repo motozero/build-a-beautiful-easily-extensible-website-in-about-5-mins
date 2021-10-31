@@ -156,3 +156,16 @@ A. Download a beautiful static site template for free from https://html5up.net
 B. SFTP in via Filezilla and upload the template
   
 ### 7. Navigate to your hostname via HTTPS and see the completed site ready to use as an origin for an Akamai CDN config.
+
+### 8. Set Up Security Response Headers
+
+A. Run...
+
+vi /etc/nginx/sites-available/default
+
+B. In each server block, so within server { add...
+
+    # Security Headers
+        add_header X-Frame-Options DENY;
+        add_header X-XSS-Protection "1";
+        add_header Content-Security-Policy "default-src 'self'; font-src *;img-src * data:; script-src *; style-src *";
