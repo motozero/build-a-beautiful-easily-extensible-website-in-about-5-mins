@@ -169,3 +169,7 @@ B. In each server block, so within server { add...
         add_header X-Frame-Options DENY;
         add_header X-XSS-Protection "1";
         add_header Content-Security-Policy "default-src 'self'; font-src *;img-src * data:; script-src *; style-src *";
+
+C. Run...
+
+systemctl restart nginx
