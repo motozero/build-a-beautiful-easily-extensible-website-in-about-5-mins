@@ -4,17 +4,15 @@
 
 How to spin up a basic yet beautiful and extensible website on any IaaS (like AWS, Azure, GCP) with a custom hostname, HTTPS, and SFTP, all nearly free and all within about 5 minutes!  
 
-And although the resulting website can definitely stand on it's own, it's really intended to act as an origin for an Akamai CDN config which we'll be walking through setting up in a future post.
+And although the resulting website can definitely stand on it's own, it's really intended to act as an origin for a CDN config which we'll be walking through setting up in a future post.
 
 ## WHY
 
-Akamai is incredible at deliverying and securing the world's most trafficked and targeted web applications but it's not always so great at making it as frictionless as possible for people to learn about, demo and experiment with Akamai solutions.  Although this has defintely been improving, I still saw a need for some Hello World style jumping off points to facilitate the adoption of Akamai solutions.
+CDN's are incredible at deliverying and securing the world's most trafficked and targeted web applications but it's not always so great at making it as frictionless as possible for people to learn about, demo and experiment with CDN solutions.  Although this has defintely been improving, I still saw a need for some Hello World style jumping off points to facilitate the adoption of CDN solutions.
 
-This is why I started HelloWorld.ByAkamai.com, to try to make it as easy as I can for anyone (like customers, fellow SEs, curious web devs, interviewees, etc.) to try out Akamai solutions.
+This is why I created this, to try to make it as easy as I can for anyone (like customers, fellow SEs, curious web devs, interviewees, etc.) to try out CDN solutions.
 
-HelloWorld.ByAkamai.com will feature several How-To style trainings, all aimming to be ~5 minutes in length, and all building on eachother.  The intent here is to support those who are looking to dive deeper into solutioning with Akamai vs. those that may only want a quick, clear understanding of a specific solution without getting having to wade through information they don't want.
-
-The purpose for this specific post is to walkthrough going from a linux install on an IaaS provider to hcing a fully functional, beautiful custom website ready to act as an origin for an Akamai config where various Akamai solutions can bolted on as desired.
+The purpose for this specific post is to walkthrough going from a linux install on an IaaS provider to a fully functional, beautiful, flexible website ready to act as an origin for a CDN config where various CDN solutions can layered on simply as desired.
 
 ## PREREQUISITES
 
@@ -30,7 +28,7 @@ The purpose for this specific post is to walkthrough going from a linux install 
  
 2. A custom hostname purchsased through a Registrar (like Google Domains, Go Daddy, NameCheap, etc.) or you could ask someone like me if I can set up a custom subdomain on a domain I own.
 
-3. A DNS resolver.  I beleive most Domain Registrars can act as a DNS resolver on your behalf.  I use domains.google.com as my registrar and they provide this service.  Akamai has a solution called Edge DNS that can do this job just as easily and potentially faster.
+3. A DNS resolver.  I beleive most Domain Registrars provide an Authoritative DNS service.  I use domains.google.com as my registrar and they provide this service.  All CDNs provide Authoritative DNS as well.  For this walkthrough I'll b using Google Domains for this, but you don't have to.
 
 4. A Command line tool (like Terminal if you're on a Mac like me or Putty if your on Windows), personally I prefer iTerm 2 which is free)
 
@@ -148,14 +146,14 @@ D. Run...
 ```
 chmod 777 -R /var/www/html  
 ```
-  
+
 ### 6. Access the server via SFTP using Filezilla
   
 A. Download a beautiful static site template for free from https://html5up.net
 
 B. SFTP in via Filezilla and upload the template
   
-### 7. Navigate to your hostname via HTTPS and see the completed site ready to use as an origin for an Akamai CDN config.
+### 7. Navigate to your hostname via HTTPS and see the completed site ready to use as an origin for a CDN config.
 
 ### 8. Set Up Security Response Headers
 
